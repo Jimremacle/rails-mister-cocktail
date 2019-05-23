@@ -2,5 +2,6 @@ class Dose < ApplicationRecord
   belongs_to :ingredient
   belongs_to :cocktail
   validates :description, presence: true, allow_blank: false
-  validates_uniqueness_of :ingredient_id, :dose => [:cocktail_id]
+  validates :ingredient, presence: true
+  validates :cocktail, uniqueness: { scope: :ingredient, message: "Already taken!" }
 end

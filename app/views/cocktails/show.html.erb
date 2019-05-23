@@ -1,20 +1,12 @@
-<%= @cocktail.name %>
+<h1> <%= @cocktail.name %></h1>
 
-      <h1> Add a new Dose </h1>
+      <h2> Add a new Dose </h2>
 
       <%= simple_form_for([@cocktail, @dose]) do |r|%>
-        <div class="row">
           <%= r.input :description, class: "form-control" %>
-        </div>
-      <div class="row">
-       <%= r.association :ingredient, collection: @ingredients, as: :select %>
-      </div>
-      <div class="row">
+          <%= r.input :ingredient, collection: Ingredient.all, as: :select %>
         <%= r.submit "Add a Dose", class: "btn btn-primary" %>
-      </div>
       <% end %>
-    </div>
-  </div>
 
 
   <div class="right-side-show">
@@ -31,3 +23,4 @@
     </div>
   </div>
 </div>
+<%= link_to "Back to the cocktails", cocktails_path %>
