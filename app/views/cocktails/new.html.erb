@@ -12,6 +12,15 @@
    <div class="row">
     <%= r.submit "Add a Cocktail", class: "btn btn-primary" %>
   </div>
+    <div class="row">
+    <%= r.input :photo %>
+  </div>
+  <div class="row">
+    <%= r.input :photo_cache, as: :hidden %>
+  </div>
+  <div class="row">
+    <%= r.submit "Add a Cocktail", class: "btn btn-primary" %>
+  </div>
 
   <% end %>
 
