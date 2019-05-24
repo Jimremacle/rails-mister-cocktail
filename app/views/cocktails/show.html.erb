@@ -3,8 +3,10 @@
       <h2> Add a new Dose </h2>
 
       <%= simple_form_for([@cocktail, @dose]) do |r|%>
+          <div class="sticky-card"></div>
           <%= r.input :description, class: "form-control" %>
           <%= r.input :ingredient, collection: Ingredient.all, as: :select %>
+          </div>
         <%= r.submit "Add a Dose", class: "btn btn-primary" %>
       <% end %>
 
